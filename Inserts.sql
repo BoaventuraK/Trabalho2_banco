@@ -89,53 +89,56 @@ INSERT INTO Periculosidade (nivel) VALUES ('Moderada');
 INSERT INTO Periculosidade (nivel) VALUES ('Alta');
 INSERT INTO Periculosidade (nivel) VALUES ('Extrema');
 
-INSERT INTO Especie (nome_popular, nome_cientifico) VALUES ('Leão','Panthera leo');
-INSERT INTO Especie VALUES (NULL,'Tigre','Panthera tigris');
-INSERT INTO Especie VALUES (NULL,'Onça','Panthera onca');
-INSERT INTO Especie VALUES (NULL,'Lobo','Canis lupus');
-INSERT INTO Especie VALUES (NULL,'Raposa','Vulpes vulpes');
-INSERT INTO Especie VALUES (NULL,'Girafa','Giraffa camelopardalis');
-INSERT INTO Especie VALUES (NULL,'Elefante','Loxodonta africana');
-INSERT INTO Especie VALUES (NULL,'Zebra','Equus quagga');
-INSERT INTO Especie VALUES (NULL,'Gorila','Gorilla gorilla');
-INSERT INTO Especie VALUES (NULL,'Chimpanzé','Pan troglodytes');
-INSERT INTO Especie VALUES (NULL,'Urso','Ursus arctos');
-INSERT INTO Especie VALUES (NULL,'Veado','Cervus elaphus');
-INSERT INTO Especie VALUES (NULL,'Canguru','Macropus rufus');
-INSERT INTO Especie VALUES (NULL,'Panda','Ailuropoda melanoleuca');
-INSERT INTO Especie VALUES (NULL,'Hipopótamo','Hippopotamus amphibius');
+INSERT INTO Familia (idFamilia, nome) VALUES
+(1, 'Felidae'),
+(2, 'Canidae'),
+(3, 'Hominidae'),
+(4, 'Ursidae'),
+(5, 'Bovidae'),
+(6, 'Cervidae'),
+(7, 'Equidae'),
+(8, 'Leporidae'),
+(9, 'Muridae'),
+(10, 'Psittacidae'),
+(11, 'Accipitridae'),
+(12, 'Crocodylidae'),
+(13, 'Testudinidae'),
+(14, 'Delphinidae'),
+(15, 'Suidae');
 
-INSERT INTO Genero VALUES (NULL,'Panthera',1);
-INSERT INTO Genero VALUES (NULL,'Panthera',2);
-INSERT INTO Genero VALUES (NULL,'Panthera',3);
-INSERT INTO Genero VALUES (NULL,'Canis',4);
-INSERT INTO Genero VALUES (NULL,'Vulpes',5);
-INSERT INTO Genero VALUES (NULL,'Giraffa',6);
-INSERT INTO Genero VALUES (NULL,'Loxodonta',7);
-INSERT INTO Genero VALUES (NULL,'Equus',8);
-INSERT INTO Genero VALUES (NULL,'Gorilla',9);
-INSERT INTO Genero VALUES (NULL,'Pan',10);
-INSERT INTO Genero VALUES (NULL,'Ursus',11);
-INSERT INTO Genero VALUES (NULL,'Cervus',12);
-INSERT INTO Genero VALUES (NULL,'Macropus',13);
-INSERT INTO Genero VALUES (NULL,'Ailuropoda',14);
-INSERT INTO Genero VALUES (NULL,'Hippopotamus',15);
+INSERT INTO Genero (idGenero, nome, Familia_idFamilia) VALUES
+(1, 'Panthera', 1),
+(2, 'Felis', 1),
+(3, 'Canis', 2),
+(4, 'Homo', 3),
+(5, 'Ursus', 4),
+(6, 'Bos', 5),
+(7, 'Cervus', 6),
+(8, 'Equus', 7),
+(9, 'Oryctolagus', 8),
+(10, 'Rattus', 9),
+(11, 'Ara', 10),
+(12, 'Haliaeetus', 11),
+(13, 'Crocodylus', 12),
+(14, 'Chelonoidis', 13),
+(15, 'Sus', 15);
 
-INSERT INTO Familia VALUES (NULL,'Felidae',1);
-INSERT INTO Familia VALUES (NULL,'Felidae',2);
-INSERT INTO Familia VALUES (NULL,'Felidae',3);
-INSERT INTO Familia VALUES (NULL,'Canidae',4);
-INSERT INTO Familia VALUES (NULL,'Canidae',5);
-INSERT INTO Familia VALUES (NULL,'Giraffidae',6);
-INSERT INTO Familia VALUES (NULL,'Elephantidae',7);
-INSERT INTO Familia VALUES (NULL,'Equidae',8);
-INSERT INTO Familia VALUES (NULL,'Hominidae',9);
-INSERT INTO Familia VALUES (NULL,'Hominidae',10);
-INSERT INTO Familia VALUES (NULL,'Ursidae',11);
-INSERT INTO Familia VALUES (NULL,'Cervidae',12);
-INSERT INTO Familia VALUES (NULL,'Macropodidae',13);
-INSERT INTO Familia VALUES (NULL,'Ursidae',14);
-INSERT INTO Familia VALUES (NULL,'Hippopotamidae',15);
+INSERT INTO Especie (idEspecie, nome_popular, nome_cientifico, Genero_idGenero) VALUES
+(1, 'Leão', 'Panthera leo', 1),
+(2, 'Tigre', 'Panthera tigris', 1),
+(3, 'Gato Doméstico', 'Felis catus', 2),
+(4, 'Lobo Cinzento', 'Canis lupus', 3),
+(5, 'Humano', 'Homo sapiens', 4),
+(6, 'Urso Pardo', 'Ursus arctos', 5),
+(7, 'Boi Doméstico', 'Bos taurus', 6),
+(8, 'Cervo Vermelho', 'Cervus elaphus', 7),
+(9, 'Zebra-da-planície', 'Equus quagga', 8),
+(10, 'Coelho Europeu', 'Oryctolagus cuniculus', 9),
+(11, 'Rato Marrom', 'Rattus norvegicus', 10),
+(12, 'Arara Azul', 'Ara ararauna', 11),
+(13, 'Águia Careca', 'Haliaeetus leucocephalus', 12),
+(14, 'Crocodilo-do-Nilo', 'Crocodylus niloticus', 13),
+(15, 'Javali', 'Sus scrofa', 15);
 
 INSERT INTO Habitat VALUES (NULL,'Habitat 1',100.50,'Espaço amplo',11);
 INSERT INTO Habitat VALUES (NULL,'Habitat 2',200.00,'Ambiente arborizado',12);
@@ -154,11 +157,11 @@ INSERT INTO Habitat VALUES (NULL,'Habitat 14',150.00,'Riacho artificial',14);
 INSERT INTO Habitat VALUES (NULL,'Habitat 15',290.90,'Região pantanosa',15);
 
 INSERT INTO Animal VALUES (NULL,'Animal 1',120.50,1.20,'Saudável',1,1,1,1);
-INSERT INTO Animal VALUES (NULL,'Animal 2',200.10,1.50,'Agressivo',2,2,2,2);
+INSERT INTO Animal VALUES (NULL,'Animal 2',200.10,1.50,'Agressivo',2,1,2,2);
 INSERT INTO Animal VALUES (NULL,'Animal 3',150.75,1.10,NULL,3,3,3,3);
 INSERT INTO Animal VALUES (NULL,'Animal 4',40.30,0.80,'Manso',4,4,3,4);
 INSERT INTO Animal VALUES (NULL,'Animal 5',8.20,0.40,NULL,1,1,3,4);
-INSERT INTO Animal VALUES (NULL,'Animal 6',800.50,5.20,NULL,6,6,3,4);
+INSERT INTO Animal VALUES (NULL,'Animal 6',800.50,5.20,NULL,6,2,3,4);
 INSERT INTO Animal VALUES (NULL,'Animal 7',1200.00,3.20,'Pesado',7,7,2,2);
 INSERT INTO Animal VALUES (NULL,'Animal 8',300.10,1.40,NULL,1,1,1,1);
 INSERT INTO Animal VALUES (NULL,'Animal 9',160.00,1.70,'Dominante',9,9,2,3);
@@ -185,19 +188,19 @@ INSERT INTO VerificacaoRotina VALUES (NULL,'2025-01-13 10:00:00','Rotina diária
 INSERT INTO VerificacaoRotina VALUES (NULL,'2025-01-14 10:00:00','Rotina diária','OK',14,4);
 INSERT INTO VerificacaoRotina VALUES (NULL,'2025-01-15 10:00:00','Verificação climática',NULL,1,2);
 
-INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-01 15:00:00','Exame geral','Sem tratamento',2,2001);
-INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-02 15:00:00','Ferimento na pata','Curativo',3,2002);
-INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-03 15:00:00','Tosse','Antibiótico',4,2003);
-INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-04 15:00:00','Vômito','Hidratação',16,2004);
-INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-05 15:00:00','Agressividade','Sedativo',5,2005);
+INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-01 15:00:00','Exame geral','Sem tratamento',2,2007);
+INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-02 15:00:00','Ferimento na pata','Curativo',3,2007);
+INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-03 15:00:00','Tosse','Antibiótico',4,2006);
+INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-04 15:00:00','Vômito','Hidratação',16,2007);
+INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-05 15:00:00','Agressividade','Sedativo',5,2006);
 INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-06 15:00:00','Exame',NULL,6,2006);
 INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-07 15:00:00','Falta de apetite','Vitaminas',7,2007);
 INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-08 15:00:00','Arranhão','Pomada',8,2008);
 INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-09 15:00:00','Letargia','Soro',9,2009);
 INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-10 15:00:00','Machucado','Curativo',10,2010);
-INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-11 15:00:00','Febre','Remédio',11,2011);
-INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-12 15:00:00','Inchaço','Compressa',12,2012);
-INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-13 15:00:00','Parasitas','Desparasitação',13,2013);
-INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-14 15:00:00','Exame de rotina','Sem observações',14,2014);
-INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-15 15:00:00','Análise','Normal',15,2015);
+INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-11 15:00:00','Febre','Remédio',11,2010);
+INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-12 15:00:00','Inchaço','Compressa',12,2008);
+INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-13 15:00:00','Parasitas','Desparasitação',13,2009);
+INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-14 15:00:00','Exame de rotina','Sem observações',14,2007);
+INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-15 15:00:00','Análise','Normal',15,2008);
 

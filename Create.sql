@@ -276,8 +276,37 @@ ALTER TABLE `AtendimentoVeterinario`
     ON DELETE NO ACTION
     ON UPDATE NO ACTION;
 
+ALTER TABLE Genero
+DROP FOREIGN KEY fk_Genero_Especie;
+
+ALTER TABLE Familia
+DROP FOREIGN KEY fk_Familia_Genero;
+
+ALTER TABLE Genero
+DROP COLUMN Especie_idEspecie;
+
+ALTER TABLE Familia
+DROP COLUMN Genero_idGenero;
+
+ALTER TABLE Genero
+ADD COLUMN Familia_idFamilia INT UNSIGNED NOT NULL;
+
+ALTER TABLE Especie
+ADD COLUMN Genero_idGenero INT UNSIGNED NOT NULL;
+
+ALTER TABLE Genero
+ADD CONSTRAINT fk_Genero_Familia
+FOREIGN KEY (Familia_idFamilia)
+REFERENCES Familia(idFamilia);
+
+ALTER TABLE Especie
+ADD CONSTRAINT fk_Especie_Genero
+FOREIGN KEY (Genero_idGenero)
+REFERENCES Genero(idGenero);
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
 
 
