@@ -188,10 +188,11 @@ INSERT INTO VerificacaoRotina VALUES (NULL,'2025-01-13 10:00:00','Rotina diária
 INSERT INTO VerificacaoRotina VALUES (NULL,'2025-01-14 10:00:00','Rotina diária','OK',14,4);
 INSERT INTO VerificacaoRotina VALUES (NULL,'2025-01-15 10:00:00','Verificação climática',NULL,1,2);
 
+INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-20 14:38:23', 'Revisão Extra', 'Sem observações', 2, 2006);
 INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-01 15:00:00','Exame geral','Sem tratamento',2,2007);
 INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-02 15:00:00','Ferimento na pata','Curativo',3,2007);
 INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-03 15:00:00','Tosse','Antibiótico',4,2006);
-INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-04 15:00:00','Vômito','Hidratação',16,2007);
+INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-04 15:00:00','Vômito','Hidratação',5,2007);
 INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-05 15:00:00','Agressividade','Sedativo',5,2006);
 INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-06 15:00:00','Exame',NULL,6,2006);
 INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-07 15:00:00','Falta de apetite','Vitaminas',7,2007);
@@ -203,4 +204,3 @@ INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-12 15:00:00','Inchaço'
 INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-13 15:00:00','Parasitas','Desparasitação',13,2009);
 INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-14 15:00:00','Exame de rotina','Sem observações',14,2007);
 INSERT INTO AtendimentoVeterinario VALUES (NULL,'2025-01-15 15:00:00','Análise','Normal',15,2008);
-
